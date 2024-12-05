@@ -4,24 +4,24 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-        <string>SweetSansPro-ThinItalic.ttf</string>
-        <string>SweetSansPro-Bold.ttf</string>
-        <string>SweetSansPro-BoldItalic.ttf</string>
-        <string>SweetSansPro-ExLight.ttf</string>
-        <string>SweetSansPro-ExLightItalic.ttf</string>
-        <string>SweetSansPro-ExThin.ttf</string>
-        <string>SweetSansPro-ExThinItalic.ttf</string>
-        <string>SweetSansPro-Hairline.ttf</string>
-        <string>SweetSansPro-HairlineItalic.ttf</string>
-        <string>SweetSansPro-Heavy.ttf</string>
-        <string>SweetSansPro-HeavyItalic.ttf</string>
-        <string>SweetSansPro-Italic.ttf</string>
-        <string>SweetSansPro-Light.ttf</string>
-        <string>SweetSansPro-LightItalic.ttf</string>
-        <string>SweetSansPro-Medium.ttf</string>
-        <string>SweetSansPro-MediumItalic.ttf</string>
-        <string>SweetSansPro-Regular.ttf</string>
-        <string>SweetSansPro-Thin.ttf</string>
+		<string>SweetSansPro-ThinItalic.ttf</string>
+		<string>SweetSansPro-Bold.ttf</string>
+		<string>SweetSansPro-BoldItalic.ttf</string>
+		<string>SweetSansPro-ExLight.ttf</string>
+		<string>SweetSansPro-ExLightItalic.ttf</string>
+		<string>SweetSansPro-ExThin.ttf</string>
+		<string>SweetSansPro-ExThinItalic.ttf</string>
+		<string>SweetSansPro-Hairline.ttf</string>
+		<string>SweetSansPro-HairlineItalic.ttf</string>
+		<string>SweetSansPro-Heavy.ttf</string>
+		<string>SweetSansPro-HeavyItalic.ttf</string>
+		<string>SweetSansPro-Italic.ttf</string>
+		<string>SweetSansPro-Light.ttf</string>
+		<string>SweetSansPro-LightItalic.ttf</string>
+		<string>SweetSansPro-Medium.ttf</string>
+		<string>SweetSansPro-MediumItalic.ttf</string>
+		<string>SweetSansPro-Regular.ttf</string>
+		<string>SweetSansPro-Thin.ttf</string>
 	</array>
 </dict>
 </plist>
