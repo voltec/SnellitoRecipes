@@ -7,6 +7,12 @@
 
 import Foundation
 
+struct EnergyValue: Hashable {
+    let type: String
+    let value: Double
+    let unit: String
+}
+
 struct Recipe: Identifiable {
     let id: UUID
     let name: String
@@ -22,6 +28,7 @@ struct Recipe: Identifiable {
     let nutrition: String
     let servings: Int
     let sourceName: String
+    let energyValues: [EnergyValue]
     let ingredients: [Ingredient]
     let instructions: [Instruction]
 }

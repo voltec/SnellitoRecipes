@@ -35,9 +35,9 @@ struct Ingredient: Identifiable, Equatable {
 
     var amountString: String {
         if unit.abbreviation.isEmpty {
-            String(format: "%.2g", amount)
+            amount.formattedString()
         } else {
-            String(format: "%.2g", amount) + " " + unit.abbreviation
+            amount.formattedString() + " " + unit.abbreviation
         }
     }
 }

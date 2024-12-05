@@ -28,6 +28,11 @@ extension Recipe {
             nutrition: "High-Protein",
             servings: 4,
             sourceName: "Gimme Some Oven",
+            energyValues: [
+                EnergyValue(type: "Calories", value: 200, unit: "kcal"),
+                EnergyValue(type: "Proteins", value: 10, unit: "g"),
+                EnergyValue(type: "Fats", value: 5, unit: "g"),
+                EnergyValue(type: "Carbohydrates", value: 25, unit: "g")],
             ingredients: [
                 Ingredient(name: "Olive Oil", amount: 2, unit: .tablespoon),
                 Ingredient(name: "All-Purpose Flour", amount: 2, unit: .tablespoon),

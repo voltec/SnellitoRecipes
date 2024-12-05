@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RecipeDetailView: View {
     enum ScrollSection: Hashable {
+        case energy
         case ingredients
         case instructions
     }
@@ -45,6 +46,7 @@ private extension RecipeDetailView {
     func recipeDetails(scroll: ScrollViewProxy) -> some View {
         VStack(spacing: 20) {
             recipeInfoCard
+            energySection(scroll: scroll)
             ingredientsSection(scroll: scroll)
             instructionsSection(scroll: scroll)
             separator
@@ -63,6 +65,31 @@ private extension RecipeDetailView {
             servings: $viewModel.servings,
             preparationTime: viewModel.recipe.preparationTime
         )
+    }
+    
+    func energySection(scroll: ScrollViewProxy) -> some View {
+        ExpandableStack(title: "Energy value per serving", defaultState: false, onExpand: { expanded in
+            if expanded {
+                withAnimation {
+                    scroll.scrollTo(ScrollSection.energy, anchor: .top)
+                }
+            }
+        }) {
+            VStack(alignment: .leading, spacing: 8) {
+                ForEach(viewModel.recipe.energyValues, id: \.self) { energyValue in
+                    HStack {
+                        Text(energyValue.type)
+                            .font(.sweetMedium(size: 16))
+                        Spacer()
+                        Text(energyValue.value.formattedString() + " " + energyValue.unit)
+                            .font(.sweetRegular(size: 16))
+                            .foregroundStyle(Color.secondary)
+                    }
+                    .padding(.vertical, 4)
+                }
+            }
+        }
+        .id(ScrollSection.energy)
     }
 
     func ingredientsSection(scroll: ScrollViewProxy) -> some View {
