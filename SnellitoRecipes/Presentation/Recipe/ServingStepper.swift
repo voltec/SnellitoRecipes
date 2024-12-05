@@ -20,6 +20,7 @@ struct ServingStepper: View {
                 }
             } label: {
                 Image("minus_button")
+                    .renderingMode(.template)
             }
 
             Text("\(value)")
@@ -32,8 +33,10 @@ struct ServingStepper: View {
                 }
             } label: {
                 Image("plus_button")
+                    .renderingMode(.template)
             }
         }
+        .foregroundStyle(Color.textPrimary)
     }
 }
 

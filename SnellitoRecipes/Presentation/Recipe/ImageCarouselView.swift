@@ -31,10 +31,8 @@ struct ImageCarouselView: View {
                     Button(action: {
                         previousImage()
                     }) {
-                        Image(systemName: "chevron.left")
-                            .font(.title)
+                        Image("image_left")
                             .foregroundColor(.white)
-                            .padding()
                             .background(Color.black.opacity(0.5))
                             .clipShape(Circle())
                     }
@@ -42,10 +40,8 @@ struct ImageCarouselView: View {
                     Button(action: {
                         nextImage()
                     }) {
-                        Image(systemName: "chevron.right")
-                            .font(.title)
+                        Image(systemName: "image_right")
                             .foregroundColor(.white)
-                            .padding()
                             .background(Color.black.opacity(0.5))
                             .clipShape(Circle())
                     }

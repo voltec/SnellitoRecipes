@@ -29,7 +29,9 @@ public struct ExpandableStack<Content: View>: View {
                     .font(.sweetMedium(size: 20))
                 Spacer()
                 Image(isExpanded ? "expand_minus" : "expand_plus")
+                    .renderingMode(.template)
             }
+            .foregroundStyle(Color.textPrimary)
             .padding(.top, 14)
             .contentShape(Rectangle())
             .onTapGesture {

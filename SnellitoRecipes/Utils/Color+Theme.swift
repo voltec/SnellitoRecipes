@@ -8,11 +8,11 @@
 import SwiftUI
 
 extension Color {
-    static let primaryBackground = Color(light: Color(hex: "#F5EFE7"), dark: Color(hex: "#05EFE7"))
+    static let primaryBackground = Color(light: Color(hex: "#F5EFE7"), dark: Color(hex: "#050F07"))
     static let accentColor = Color(hex: "#DB4725")
-    static let textPrimary = Color(hex: "#000000")
-    static let textSecondary = Color(hex: "#626262")
-    static let recipeBackground = Color(hex: "#DFA8EE").opacity(0.38)
+    static let textPrimary = Color(light: Color(hex: "#000000"), dark: Color(hex: "#F1F1F1"))
+    static let textSecondary = Color(light: Color(hex: "#626262"), dark: Color(hex: "#B2B2B2"))
+    static let recipeBackground = Color(light: Color(hex: "#DFA8EE").opacity(0.38), dark: Color(hex: "#9B4CB5").opacity(0.6))
     static let footerBackground = Color(hex: "#1433A4")
     static let footerText = Color.white
     static let footerSecondary = Color(hex: "#F1F1F1")

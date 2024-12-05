@@ -72,6 +72,7 @@ struct RecipeInfoCardView: View {
             .padding(16)
             .background(RoundedRectangle(cornerRadius: 10).stroke(Color.accentColor, lineWidth: 1))
         }
+        .foregroundStyle(Color.textPrimary)
     }
 }
 

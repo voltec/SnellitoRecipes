@@ -25,8 +25,9 @@ struct InstructionView: View {
 
             VStack(alignment: .leading, spacing: 8) {
                 // Instruction type
-                Text(instruction.type.rawValue.uppercased())
-                    .font(.headline)
+                Text(instruction.type.rawValue)
+                    .textCase(.uppercase)
+                    .font(.sweetMedium(size: 18))
                     .foregroundColor(.secondary)
 
                 // Description
@@ -43,6 +44,7 @@ struct InstructionView: View {
                 }
             }
         }
+        .foregroundStyle(Color.textPrimary)
     }
 }
 
