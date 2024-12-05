@@ -12,7 +12,10 @@ extension Color {
     static let accentColor = Color(hex: "#DB4725")
     static let textPrimary = Color(light: Color(hex: "#000000"), dark: Color(hex: "#F1F1F1"))
     static let textSecondary = Color(light: Color(hex: "#626262"), dark: Color(hex: "#B2B2B2"))
-    static let recipeBackground = Color(light: Color(hex: "#DFA8EE").opacity(0.38), dark: Color(hex: "#9B4CB5").opacity(0.6))
+    static let recipeBackground = Color(
+        light: Color(hex: "#DFA8EE").opacity(0.38),
+        dark: Color(hex: "#9B4CB5").opacity(0.6)
+    )
     static let footerBackground = Color(hex: "#1433A4")
     static let footerText = Color.white
     static let footerSecondary = Color(hex: "#F1F1F1")

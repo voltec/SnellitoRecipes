@@ -7,14 +7,18 @@
 
 import SwiftUI
 
-public struct ExpandableStack<Content: View>: View {
+struct ExpandableStack<Content: View>: View {
     private let title: String
     private let content: () -> Content
     @State private var isExpanded: Bool = false
+    private var onExpand: (Bool) -> Void
 
-    public init(title: String, defaultState: Bool = false, @ViewBuilder content: @escaping () -> Content) {
+    public init(title: String, defaultState: Bool = false, onExpand: @escaping (Bool) -> Void = { _ in },
+                @ViewBuilder content: @escaping () -> Content)
+    {
         self.title = title
         isExpanded = defaultState
+        self.onExpand = onExpand
         self.content = content
     }
 
@@ -38,6 +42,7 @@ public struct ExpandableStack<Content: View>: View {
                 withAnimation {
                     isExpanded.toggle()
                 }
+                onExpand(isExpanded)
             }
 
             // Expandable content

@@ -40,7 +40,7 @@ struct ImageCarouselView: View {
                     Button(action: {
                         nextImage()
                     }) {
-                        Image(systemName: "image_right")
+                        Image("image_right")
                             .foregroundColor(.white)
                             .background(Color.black.opacity(0.5))
                             .clipShape(Circle())

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RecipeDetailViewModel: ObservableObject {
+final class RecipeDetailViewModel: ObservableObject {
     let recipe: Recipe
     @Published var servings: Int {
         didSet { updateServings(to: servings) }
