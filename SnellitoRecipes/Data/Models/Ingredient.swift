@@ -27,8 +27,8 @@ enum IngredientUnit: String {
     }
 }
 
-struct Ingredient: Identifiable {
-    let id = UUID()
+struct Ingredient: Identifiable, Equatable {
+    var id: UUID = .init()
     let name: String
     let amount: Double
     let unit: IngredientUnit

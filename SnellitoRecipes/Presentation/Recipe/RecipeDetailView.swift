@@ -8,33 +8,44 @@
 import SwiftUI
 
 struct RecipeDetailView: View {
-    let recipe: Recipe = .mock()
-    @State var servings: Int = 4
+    @StateObject private var viewModel: RecipeDetailViewModel
+
+    init(recipe: Recipe) {
+        _viewModel = StateObject(wrappedValue: RecipeDetailViewModel(recipe: recipe))
+    }
 
     var body: some View {
         ScrollView {
             VStack(spacing: 14) {
-                ImageCarouselView(imageURLs: recipe.imageURLs)
+                ImageCarouselView(imageURLs: viewModel.recipe.imageURLs)
                     .clipShape(RoundedRectangle(cornerRadius: 15))
                     .padding(.horizontal, 16)
 
-                VStack {
+                VStack(spacing: 20) {
                     RecipeInfoCardView(
-                        recipeName: recipe.name,
-                        cuisine: recipe.cuisine,
-                        description: recipe.description,
-                        cookingTime: recipe.cookingTime,
-                        servings: $servings,
-                        preparationTime: recipe.preparationTime
+                        recipeName: viewModel.recipe.name,
+                        cuisine: viewModel.recipe.cuisine,
+                        description: viewModel.recipe.description,
+                        cookingTime: viewModel.recipe.cookingTime,
+                        servings: $viewModel.servings,
+                        preparationTime: viewModel.recipe.preparationTime
                     )
-                    ExpandableStack(title: "Ingredients") {
-                        ForEach(recipe.ingredients) { ingredient in
-                            IngredientView(ingredient: ingredient, isChecked: false)
+
+                    ExpandableStack(title: "Ingredients", defaultState: true) {
+                        ForEach(viewModel.scaledIngredients) { ingredient in
+                            IngredientView(
+                                ingredient: ingredient,
+                                isChecked: viewModel.isSelectedIngredient(ingredient)
+                            )
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                viewModel.toggleSelectedIngredient(ingredient)
+                            }
                         }
                     }
 
                     ExpandableStack(title: "Instructions") {
-                        ForEach(recipe.instructions) { instruction in
+                        ForEach(viewModel.recipe.instructions) { instruction in
                             InstructionView(instruction: instruction)
                         }
                     }
@@ -58,6 +69,6 @@ struct RecipeDetailView: View {
 
 #Preview {
     NavigationStack {
-        RecipeDetailView()
+        RecipeDetailView(recipe: .mock())
     }
 }

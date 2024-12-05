@@ -12,8 +12,9 @@ public struct ExpandableStack<Content: View>: View {
     private let content: () -> Content
     @State private var isExpanded: Bool = false
 
-    public init(title: String, @ViewBuilder content: @escaping () -> Content) {
+    public init(title: String, defaultState: Bool = false, @ViewBuilder content: @escaping () -> Content) {
         self.title = title
+        isExpanded = defaultState
         self.content = content
     }
 
@@ -27,15 +28,15 @@ public struct ExpandableStack<Content: View>: View {
                 Text(title)
                     .font(.sweetMedium(size: 20))
                 Spacer()
-                Button(action: {
-                    withAnimation {
-                        isExpanded.toggle()
-                    }
-                }) {
-                    Image(isExpanded ? "expand_minus" : "expand_plus")
-                }
+                Image(isExpanded ? "expand_minus" : "expand_plus")
             }
             .padding(.top, 14)
+            .contentShape(Rectangle())
+            .onTapGesture {
+                withAnimation {
+                    isExpanded.toggle()
+                }
+            }
 
             // Expandable content
             if isExpanded {

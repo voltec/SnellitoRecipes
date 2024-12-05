@@ -8,7 +8,7 @@
 import Foundation
 
 struct Instruction: Identifiable {
-    let id = UUID()
+    var id: UUID = .init()
     let stepNumber: Int
     let type: InstructionType
     let description: String

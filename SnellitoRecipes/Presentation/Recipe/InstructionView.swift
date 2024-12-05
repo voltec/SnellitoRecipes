@@ -17,7 +17,6 @@ struct InstructionView: View {
                 .font(.sweetBold(size: 24))
                 .foregroundColor(.accentColor)
                 .frame(width: 30, height: 30)
-                .background(Color.primaryBackground)
                 .cornerRadius(15)
                 .overlay(
                     Circle()

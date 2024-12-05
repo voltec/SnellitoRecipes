@@ -12,7 +12,7 @@ struct SnellitoRecipesApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                RecipeDetailView()
+                RecipeDetailView(recipe: .mock())
                     .toolbar {
                         ToolbarItem(placement: .topBarLeading) {
                             HStack(spacing: 10) {
