@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct FooterView: View {
+    @ObservedObject var viewModel: RecipeDetailViewModel
+
     var body: some View {
         ZStack {
             Color.footerBackground
@@ -29,10 +31,18 @@ struct FooterView: View {
                     .font(.sweetMedium(size: 18))
 
                 HStack(spacing: 20) {
-                    Button("Recipes") {}
-                    Button("About Us") {}
-                    Button("FAQ") {}
-                    Button("Contact") {}
+                    Button("Recipes") {
+                        viewModel.didTapRecipes()
+                    }
+                    Button("About Us") {
+                        viewModel.didTapAboutUs()
+                    }
+                    Button("FAQ") {
+                        viewModel.didTapFAQ()
+                    }
+                    Button("Contact") {
+                        viewModel.didTapContact()
+                    }
                 }
                 .font(.sweetRegular(size: 16))
 
@@ -50,10 +60,10 @@ struct FooterView: View {
                 .font(.sweetMedium(size: 18))
 
             HStack(spacing: 20) {
-                Button(action: {}) {
+                Button(action: { viewModel.didTapInstagram() }) {
                     Text("Instagram")
                 }
-                Button(action: {}) {
+                Button(action: { viewModel.didTapFacebook() }) {
                     Text("Facebook")
                 }
             }
@@ -64,5 +74,5 @@ struct FooterView: View {
 }
 
 #Preview {
-    FooterView()
+    FooterView(viewModel: RecipeDetailViewModel(recipe: .mock()))
 }
